@@ -1,7 +1,31 @@
+@font-face {
+	font-family: "PlayfairDisplayRegular";
+	src: url("../fonts/PlayfairDisplayRegular/PlayfairDisplayRegular.eot");
+	src: url("../fonts/PlayfairDisplayRegular/PlayfairDisplayRegular.eot")format("embedded-opentype"),
+	url("../fonts/PlayfairDisplayRegular/PlayfairDisplayRegular.woff") format("woff"),
+	url("../fonts/PlayfairDisplayRegular/PlayfairDisplayRegular.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face {
+	font-family: "UbuntuRegular";
+	src: url("../fonts/UbuntuRegular/UbuntuRegular.eot");
+	src: url("../fonts/UbuntuRegular/UbuntuRegular.eot?#iefix")format("embedded-opentype"),
+	url("../fonts/UbuntuRegular/UbuntuRegular.woff") format("woff"),
+	url("../fonts/UbuntuRegular/UbuntuRegular.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
 body{
 	background-color:#f0f0f0;
 	display: flex;
 	justify-content: center;
+	font-family: "PlayfairDisplayRegular";
 }
 main{
 	width: 90%;
@@ -10,40 +34,67 @@ main{
 }
 h4{
 	font-size: 14px;
-	font-family: "Ubuntu";
+	font-family: "UbuntuRegular";
 	color: rgb(180, 173, 158);
+	margin-top: 100px;
 }
 h1{
 	font-size: 30px;
-  	font-family: "PlayfairDisplay";
+	font-family: "PlayfairDisplayRegular";
   	color: rgb(98, 98, 98);
+  	margin-top: 30px;
+}
+p{
+	margin-top: 40px;
 }
 a{
 	text-decoration: none;
 	color: black;
 }
 .top{
-	width: 100%;
+	width: 70%;
+	left: 50%;
+	transform: translate(15%, 0);
 	display: flex;
-	align-items: center;
+	justify-content: space-between;
+	margin: 50px 0 50px 0;
 }
 .logo{
-	width: 40%;
-	margin-left: 30px;
+	margin-top: 25px;
+	margin-left: -8%;
 }
 .menu{
 	width: 70%;
 	display: flex;
-	align-items: center;
 	justify-content: space-around;
+	font-family: "PlayfairDisplayRegular";
+	margin-right: -23%;
 }
-.menu li{
-	display: inline-block;
+nav ul li {
+	font-size: 14px;
+	margin-top: 30px;
+	list-style-type: none;
 	margin-left: 5%;
+	padding: 0 0 30px 0;
+	/*line-height: 100px;*/
+	height: 20px;
+}
+nav ul li a:hover{
+	font-size: 18px;
+	background-color: pink;
+	color: grey;
+	height: 300px;
+	border-radius: 50%;
+	box-shadow: 0 0 50px pink;
 }
 .slider{
+	margin: 90px 5% 0 5%;
+	width: 90%;
 	display: flex;
 	justify-content: center;
+}
+.slider img{
+	width: 100%;
 }
 section{
 	width: 80%;
@@ -51,13 +102,30 @@ section{
 	flex-direction: column;
 	text-align: left;
 	margin: 0 10%;
-
 }
 .photo1, .photo2, .photo3{
+	width: 100%;
 	column-count: 2;
-	padding-top: 70px;
-	height: 500px;
-	column-gap: 10%;
+	margin: 50px 0px;
+	column-gap: 60px;
+}
+.photo1 img, .photo2 img, .photo3 img{
+	width: 100%;
+	height: 280px;
+}
+section img:hover{
+	box-shadow: 10px 10px 5px pink;
+    transition: 0.3s;
+}
+.photo1 h4, h1, .photo2 h4, h1, .photo3 h4, h1{
+	margin-top: 30px;
+}
+.photo1 p, .photo2 p, .photo3 p{
+	font-family: "PlayfairDisplayRegular";
+	margin-top: 40px;
+	padding-bottom: 10px;
+	line-height: 24px;
+	font-size: 14px;
 }
 form{
 	background-color: #f0f0f0;
@@ -67,23 +135,20 @@ form{
 	color: black;
 }
 form input{
-	width: 40%;
-	line-height: 30px;
+	width: 45%;
+	line-height: 24px;
+	font-size: 14px;
 	border-style: none;
-	border-bottom: 3px solid grey;
+	border-bottom: 2px solid grey;
 	background-color: #f0f0f0;
 }
 form input:last-child{
-	margin-left: -10px;
-	width: 5%;
-	height: 35px;
-	background-image: url(../images/arrow.png) ;
-	background-size: cover;
+	border-style: none;
+	left: -40px;
+	position: relative;
+	width: 35px;
+	height:17px;
 	cursor: pointer;
-}
-form img{
-	padding-top:30px;
-	border-bottom:  3px solid grey;
 }
 button{
 	width: 200px;
@@ -95,28 +160,36 @@ button{
 	margin: 100px auto;
 }
 button:hover{
-	background-color: grey;
+	transform: scale(1.1);
+	transition: 0.3s;
+	cursor: pointer;
+	background-color: pink;
 	border:1px solid #f0f0f0;
-	color: #f0f0f0;
+	color: grey;
+	border: 1px solid grey;
+	border-radius: 5px 5px;
+	box-shadow: 0 0 10px pink;
 }
 footer{
+	height: 100px;
 	width: 100%;
 	background-color: #f0f0f0;
-	line-height: 74px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	
+	align-items: center;
 }
 footer img{
 	width: 18px;
 	height: 18px;
-	align-self: center;
-	
 }
-footer div{
-	width: 50%;
-	float: left;
+footer img:hover{
+	box-shadow: 0 5px 5px pink;
 }
-footer div:last-child a{
-	align-self: flex-start;
+footer ul li{
+	display: inline;
+	list-style: none;
+}
+footer a:hover{
+	color: pink;
+}
